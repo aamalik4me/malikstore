@@ -1,0 +1,104 @@
+
+<table align="center" >
+	<thead style=" font-family: Arial Blak; background-color: gold; text-transform: uppercase;">
+	<th>
+		First Case
+	</th>
+	<th>
+		Second Case
+	</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" align="center" bgcolor="Blue" style=" color: white;">
+				<div>Finding the Distance Between the Point A(2,5) and Point B(5,9)<br>
+in this case (X<sub>1</sub> , Y<sub>1</sub>) = (2,5) and (X<sub>2</sub> , Y<sub>2</sub>) = (5,9)
+</div>
+			</td>
+		</tr>
+		<tr>
+
+			<td bgcolor="silver">
+				Case X<sub>1</sub>: <input style="border-style: none; margin: 10px; border-radius: 10px; border-bottom: 1px solid gold; text-align: center;" type="number" id="x1" name="">
+			</td>
+			<td bgcolor="silver">
+				Case Y<sub>1</sub>: <input style="border-style: none; margin: 10px; border-radius: 10px; border-bottom: 1px solid gold; text-align: center;" type="number" id="y1" name="">
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="silver">
+				Case X<sub>2</sub>: <input style="border-style: none; margin: 10px; border-radius: 10px; border-bottom: 1px solid gold; text-align: center;" type="number" id="x2" name="">
+			</td>
+			<td bgcolor="silver">
+				Case Y<sub>2</sub>: <input style="border-style: none; margin: 10px; border-radius: 10px; border-bottom: 1px solid gold; text-align: center;" type="number" id="y2" name="">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				
+				<fieldset style="background-color: silver;"> <legend>Steps</legend> 
+					<span id="Cstep1"></span>
+					<span id="Cstep2"></span>
+					<span id="Ccase1"></span>
+					<span id="Ccase2"></span>
+					<span id="Ccase3"></span>
+					<span id="Ccase4"></span>
+					<span id="Csolution"></span>
+					<hr>
+					<span id="answer1"></span>
+				</fieldset>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">
+				<input style="width: 100%; height: auto; background-image: linear-gradient(45deg, green, gold, silver); position: relative;" type="submit" onclick="findDistance()" name="submit" value="Find the Distance">
+			</td>
+			
+		</tr>
+	</tbody>
+</table>
+
+for any Question Use this link <a href="https://www.wikihow.com/Find-the-Distance-Between-Two-Points" target="_blank" > Wiki How</a>
+   <script type="text/javascript">
+	function findDistance(){
+	var x1 = document.getElementById('x1').value;
+	var y1 = document.getElementById('y1').value;
+	var x2 = document.getElementById('x2').value;
+	var y2 = document.getElementById('y2').value;
+
+	
+	//var case1 = Math.sqrt(x2-x1);
+	//var case2 = Math.sqrt(y2-y1);
+
+	var case1 = x2 - x1;
+	var case2 = y2 - y1;
+	var step1 = Math.pow(case1, 2);
+	var step2 = Math.pow(case2, 2);
+	var solution = step1 + step2;
+	var finalSquare = Math.sqrt(solution);
+	//var solution = Math.sqrt(x2-x1)^2 + Math.sqrt(y2-y1)^2;
+	//var solution = case1 + case2;
+//	if (finalSquare % 2 == 0){	
+
+		
+		//steps
+		document.getElementById('Cstep1').innerHTML=  " <p style=\"color: red;\">step1 &emsp; &emsp;X<sub>2</sub> - X<sub>1</sub> = &emsp; "+ case1 +" <br> ";
+		document.getElementById('Cstep2').innerHTML=  " <p style=\"color: green;\">step2 &emsp; &emsp;Y<sub>2</sub> - Y<sub>1</sub> = &emsp; "+ case2 +"  <br> ";
+		document.getElementById('Ccase1').innerHTML=  " <p style=\"color: Blue;\">step3 &emsp; &emsp;"+case1+"<sup>2</sup> &emsp; =  &emsp;"+ step1 +"  <br> ";
+		document.getElementById('Ccase2').innerHTML=  " <p style=\"color: gold;\">step4 &emsp; &emsp;"+case2+"<sup>2</sup> &emsp;=  &emsp; "+ step2 +"  <br> ";
+		document.getElementById('Ccase3').innerHTML=  " <p style=\"color: cyan;\">Step5 &emsp; &emsp;"+ step1 + " + "+ step2 +" &emsp;  = &emsp; " + solution+ "<br>";
+		document.getElementById('Ccase4').innerHTML=  " <p style=\"color: Navy Blue;\">Square Root of  &emsp; &emsp;"+ solution+"  is &emsp; "  + finalSquare;
+
+
+
+		document.getElementById('answer1').innerHTML= " Square Root of &emsp; " + solution + " is <br> " +finalSquare + " Unit";
+		
+
+//	}else{
+//		document.getElementById('answer1').innerHTML= "";
+//		document.getElementById('answer').innerHTML= "Can't Find the Square Root!!";		
+//		}
+	}
+
+
+   </script>
